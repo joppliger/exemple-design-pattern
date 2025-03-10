@@ -4,11 +4,11 @@ import java.io.*;
 
 
 public class Car {
-    public String brand;
-    public String model;
-    public Wheel[] wheels = new Wheel[4];
-    public Driver pilot;
-    public Driver copilot;
+    private String brand;
+    private String model;
+    private Wheel[] wheels = new Wheel[4];
+    private Driver pilot;
+    private Driver copilot;
 
     public Car(String brand, String model) {
         this.brand = brand;
@@ -74,6 +74,15 @@ public class Car {
         }
 
         System.out.println("Vroooum !");
+    }
+    
+    public double getRotation() {
+        return this.wheels[0].getRotation();
+    }
+
+    public void rotate(double rotation) {
+        this.wheels[0].rotate(rotation);
+        this.wheels[1].rotate(rotation);
     }
 
     @Override

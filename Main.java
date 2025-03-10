@@ -9,10 +9,13 @@ public class Main {
         Driver didier = new Driver("didier");
 
         car.sitPilot(didier);
-        car.unmountWheel(0);
+
         car.drive();
 
+        System.out.println(car.getRotation());
 
-        System.out.println(car);
+        car.rotate(45.0);
+
+        System.out.println(car.getRotation());
     }
 }
