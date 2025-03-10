@@ -20,34 +20,56 @@ public class Car {
     }
 
     public void sitPilot(Driver driver) {
+        if(this.pilot != null) {
+            throw new IllegalStateException("A pilot is already there");
+        }
+
         this.pilot = driver;
     }
 
     public void sitCopilot(Driver driver) {
+        if(this.pilot != null) {
+            throw new IllegalStateException("A copilot is already there");
+        }
+
         this.copilot = driver;
     }
 
+    private boolean isWheelExists(int index) {
+        return this.wheels[index] != null;
+    }
+
     public void mountWheel(int index) {
+        if(this.isWheelExists(index) == true) {
+            throw new IllegalStateException("Impossible to mount a wheel that already exists");
+        }
+
         this.wheels[index] = new Wheel();
     }
 
     public void unmountWheel(int index) {
+        if(this.isWheelExists(index) == false) {
+            throw new IllegalStateException("Impossible to mount a wheel that already exists");
+        }
+
         this.wheels[index] = null;
     }
 
-    public void drive() {
-        // Does Pilot drive ?
-        if(this.pilot == null) {
-            throw new IllegalStateException("A driver is missing");
-        }
-        // Does 4 wheels exists ?
+    private int getWheelsNumber() {
         int counter = 0;
         for(int i = 0; i < this.wheels.length; i++) {
             if(this.wheels[i] != null) {
                 counter++;
             }
         }
-        if(counter != this.wheels.length) {
+        return counter;
+    }
+
+    public void drive() {
+        if(this.pilot == null) {
+            throw new IllegalStateException("A driver is missing");
+        }
+        if(this.getWheelsNumber() < this.wheels.length) {
             throw new IllegalStateException("Missing some wheels");
         }
 
