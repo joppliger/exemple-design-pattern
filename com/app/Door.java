@@ -2,13 +2,23 @@ package com.app;
 
 class Door {
     public final String color;
+    private boolean isOpen; 
 
-    public Door(String color) {
+    public Door(String color, boolean isOpen) {
         this.color = color;
+        this.isOpen = isOpen;
+    }
+
+    public void setOpen() {
+        this.isOpen = true;
+    }
+    
+    public void close() {
+        this.isOpen = false;
     }
 
     @Override
     public String toString() {
-        return String.format("%s", this.color);
+        return String.format("the %s door is %s", this.color, this.isOpen ? "open" : "close");
     }
 }
