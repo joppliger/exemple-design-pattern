@@ -1,21 +1,12 @@
-import com.app.Car;
-import com.app.Driver;
-
+import com.app.*;
 import java.io.*;
 
 public class Main {
     public static void main(String argv[]) {
         Car car = new Car("Peugeot", "306");
-        Driver didier = new Driver("didier");
+        HumanDriver didier = new HumanDriver("didier", "dupont");
+        RobotDriver r2d2 = new RobotDriver("r2d2", "1.0");
 
-        car.sitPilot(didier);
-
-        car.drive();
-
-        System.out.println(car.getRotation());
-
-        car.rotate(45.0);
-
-        System.out.println(car.getRotation());
+        System.out.println(didier);
     }
 }

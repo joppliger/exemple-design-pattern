@@ -3,7 +3,7 @@ package com.app;
 import java.io.*;
 
 public class Driver {
-    private String name;
+    protected String name;
 
     public Driver(String name) {
         this.name = name;
