@@ -6,7 +6,6 @@ public class Car {
     public final String brand;
     public final String model;
     private final Wheel[] wheels = new Wheel[4];
-    public Door[] doors = new Door[2];
     private Driver pilot;
     private Driver copilot;
 
@@ -16,10 +15,6 @@ public class Car {
 
         for (int i = 0; i < this.wheels.length; i++) {
             this.wheels[i] = new Wheel();
-        }
-
-        for (int i = 0; i < this.doors.length; i++) {
-            this.doors[i] = new Door("red", false);
         }
     }
 

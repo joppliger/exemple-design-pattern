@@ -1,8 +1,10 @@
 package com.app;
 
+import java.io.*;
+
 class Door {
     public final String color;
-    private boolean isOpen; 
+    public boolean isOpen; 
 
     public Door(String color, boolean isOpen) {
         this.color = color;
