@@ -7,6 +7,8 @@ public class Main {
         HumanDriver didier = new HumanDriver("didier", "dupont");
         RobotDriver r2d2 = new RobotDriver("r2d2", "1.0");
 
-        System.out.println(didier);
+        car.sitPilot(didier);
+        car.sitCopilot(r2d2);
+
     }
 }

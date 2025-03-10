@@ -28,7 +28,7 @@ public class Car {
     }
 
     public void sitCopilot(Driver driver) {
-        if(this.pilot != null) {
+        if(this.copilot != null) {
             throw new IllegalStateException("A copilot is already there");
         }
 
