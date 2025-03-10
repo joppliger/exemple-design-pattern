@@ -9,7 +9,7 @@ class Door {
         this.isOpen = isOpen;
     }
 
-    public void setOpen() {
+    public void open() {
         this.isOpen = true;
     }
     
